@@ -1,13 +1,8 @@
 let readlineSync = require('readline-sync');
 let nl = () => { console.log('\n') }
 let clear = () => { process.stdout.write('\033c') }
-<<<<<<< HEAD
 
-=======
-// process.stdout.write('\033c');
-// console.log("How are you?")
-// console.log("Ready to play?")
->>>>>>> 0b53b196237c23a75827b8b46031b5080cf83e42
+
 clear()
 let score;
 let input;
