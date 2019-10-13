@@ -10,7 +10,6 @@ f.print(`Hi ${userName}. I am the HAL-11000 interstellar vacation planner.\n\n`)
 f.print(`${userName}, I am going to ask you a set of questions.\n\n`);
 f.print(`If you get a perfect score, the trip will be to outer space.\nIf you get a score of zero your vacation will be in Dade County.\nFor any other score we will plan a trip here on Earth.\n\n`)
 
-
 input = readlineSync.question('Ready to begin: yes or no: ');
 
 if (input === 'no') {
@@ -18,27 +17,17 @@ if (input === 'no') {
     process.exit()
 }
 
-
+f.clear();
 f.programPause('Retrieving data from the database located in Mars!\nPlease wait');
-f.print('Ok data have been received. Converting martian object notation to earth object notation. Also known as JSON.')
-f.programPause('Almost done!');
+f.print('Ok data have been received. Converting martian object notation to earth object notation. Also known as JSON.\nAlmost done!')
+
 f.clear()
 
 questions = f.shuffleQuestions(questions);
-//console.log(questions)
+
 let asked = []
-function askingQuestion(num) {
-    f.print('Please answer the following question::')
-    console.log(questions[num].question)
-    Object.keys(questions[num].options).forEach((key) => {
-        console.log(key, questions[num].options[key])
 
-    })
-    let answer = readlineSync.question(`What is your answer? `)
-    return [questions[num].num, questions[num].answer, answer]
-}
-
-console.log(askingQuestion(0))
+console.log(f.askingQuestion(questions, 0))
 
 
 
