@@ -14,25 +14,17 @@ module.exports = {
     print: (msg) => {
         console.log(msg)
     },
-    questionOrder = function (size) {
-        let numArray = [];
-        // let size = size;
-        let k = -1;
-        while (numArray.length < size) {
-            k++
-            numArray.push(k)
-        }
-
-        let i = numArray.length;
+    shuffleQuestions: function (array) {
+        let i = array.length;
         let j = 0;
         let temp;
 
         while (i--) {
             j = Math.floor(Math.random() * (i + 1));
-            temp = numArray[i]
-            numArray[i] = numArray[j]
-            numArray[j] = temp
+            temp = array[i]
+            array[i] = array[j]
+            array[j] = temp
         }
-        return numArray;
+        return array;
     }
 }
