@@ -39,6 +39,16 @@ module.exports =
                 c: 'Brenda Eiche'
             },
             answer: 'a'
+        },
+        {
+            num: 4,
+            question: 'Which is the most southern state?',
+            options: {
+                a: 'Florida',
+                b: 'Texas',
+                c: 'Hawaii'
+            },
+            answer: 'c'
         }
     ]
 
