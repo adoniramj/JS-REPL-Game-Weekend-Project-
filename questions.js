@@ -49,6 +49,16 @@ module.exports =
                 c: 'Hawaii'
             },
             answer: 'c'
+        },
+        {
+            num: 5,
+            question: 'How many electoral college votes does the District of Columbia has?',
+            options: {
+                a: '1',
+                b: '3',
+                c: '5'
+            },
+            answer: 'b'
         }
     ]
 
