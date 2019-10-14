@@ -59,6 +59,26 @@ module.exports =
                 c: '5'
             },
             answer: 'b'
+        },
+        {
+            num: 6,
+            question: 'Which president was elected more than twice?',
+            options: {
+                a: 'Franklin D. Roosevelt',
+                b: 'Theodore Roosevelt',
+                c: 'George Washington'
+            },
+            answer: 'a'
+        },
+        {
+            num: 7,
+            question: 'Which is the capital of Canada?',
+            options: {
+                a: 'Ottawa',
+                b: 'Quebec',
+                c: 'Toronto'
+            },
+            answer: 'a'
         }
     ]
 
