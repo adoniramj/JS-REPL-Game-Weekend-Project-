@@ -16,7 +16,8 @@ f.print(`If you get a perfect score, the trip will be to outer space.\nIf you ge
 input = readlineSync.question('Ready to begin: yes or no: ');
 
 if (input === 'no') {
-    f.print("That's to bad. If you need assitance don't hesitate to call. Bye.")
+    f.clear();
+    f.print("That's too bad. If you need assitance don't hesitate to call. Bye.")
     process.exit()
 }
 
@@ -27,11 +28,13 @@ f.programPause('Ok data have been received. Converting martian object notation t
 f.clear()
 
 questions = f.shuffleQuestions(questions);
-let totalQuestions = Math.floor(questions.length * .5)
-for (let i = 0; i <= totalQuestions; i++) {
+let totalQuestions = 4
+
+for (let i = 0; i <= totalQuestions - 1; i++) {
     let answer = f.askingQuestion(questions, i)
     if (answer[1] === answer[2].toLowerCase()) {
         correctNumber++
+
     }
     f.clear();
 }
@@ -39,31 +42,31 @@ for (let i = 0; i <= totalQuestions; i++) {
 f.print(`Ok. All done ${userName}. Now I have to send the answers back to Mars.\nI do not have access to the answer key.`);
 f.programPause(`Please wait. Now I have to convert the data back to martian object notation and send it to Mars.`)
 f.clear();
-f.print(`Finally!. I have a the final score`);
-if (correctNumber != totalQuestions && correctNumber > 0) {
+f.print(`Finally!. I have the final score.`);
+if (correctNumber < 4 && correctNumber > 0) {
     f.programPause('')
     f.clear();
     f.print(`${userName} you did not get a perfect score, but you did not get a big fat ZERO.\nSo let's raise the stakes. I will ask one question. If you get right, you'll win an all expenses paid trip to the Moon. But if you miss, no vacation for you!`)
     f.print(`You can always say no and go somewhere here on Earth. But you look like the James Bond type.`)
     input = readlineSync.question('Raise the stakes: yes or no: ');
+    f.clear()
     if (input === 'yes') {
         let answer = f.askingQuestion(questions, (questions.length - 1))
         if (answer[1] === answer[2].toLowerCase()) {
-            f.print(`Congratulation ${userName} you're going to the Moon`)
+            f.print(`Congratulation ${userName} you're going to the Moon.`)
         } else {
             f.print(`Cancel your vacation request. You are not going anywhere this year.`)
         }
     } else {
-        f.print(`Very well. I guess you did not fell adventurous. Your next vacation will be in Japan.`)
+        f.print(`Very well. I guess you did not feel adventurous. Your next vacation will be in Japan.`)
     }
 
-} else if (correctNumber === totalQuestions) {
+} else if (correctNumber === 0) {
     f.print(`Congratulation ${userName} you got a perfect score. Your are going to the Moon.`)
-} else {
     f.print(`Sorry ${userName} you got a null of a score. In other words your score was 0. You're not going anywhere this year.`)
+} else {
+    f.print(`Congratulation ${userName} you got a perfect score. Your are going to the Moon.`)
 }
-
-
 
 
 
